@@ -76,6 +76,15 @@ public class RevenueController {
 		return revenueBetweenDates;
 		
 	}
+	
+	@GetMapping("authorHistory/{aId}")
+	public List<Transaction> getAuthorHistory(@PathVariable Integer aId)
+	{
+		
+		List<Transaction> authorHistory = financialServices.getAuthorHistory(aId);
+		return authorHistory;
+		
+	}
 
 	
 	  

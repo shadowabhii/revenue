@@ -61,6 +61,15 @@ public class FinancialServicesImpl implements IFinancialServices {
 
 		return totalPrice;
 	}
+
+		@Override
+		public List<Transaction> getAuthorHistory(Integer authorId) {
+			
+			List<Transaction> records=	financialsRepository.findAll().stream().filter(e-> (e.getaId()==authorId)).
+					collect(Collectors.toList());
+			
+			return records;
+		}
 	 
 
 		
