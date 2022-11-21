@@ -48,13 +48,14 @@ public class FinancialServicesImpl implements IFinancialServices {
 
 		List<Transaction> records1 = financialCustomRepository.findBydateBetween(startDate, endDate);
 		
-	
+		List<Transaction> records=	records1.stream().filter(e-> (e.getaId()==authorId)).
+				collect(Collectors.toList());
 		
 
 		double totalPrice=0.0;
-		for(int i=0;i<records1.size();i++)
+		for(int i=0;i<records.size();i++)
 		{
-			totalPrice=totalPrice+records1.get(i).getPrice();
+			totalPrice=totalPrice+records.get(i).getPrice();
 		}
 			
 			System.out.println(totalPrice);
@@ -63,10 +64,14 @@ public class FinancialServicesImpl implements IFinancialServices {
 	}
 
 		@Override
-		public List<Transaction> getAuthorHistory(Integer authorId) {
+		public List<Transaction> getAuthorHistory(Date startDate, Date endDate,Integer authorId) {
 			
-			List<Transaction> records=	financialsRepository.findAll().stream().filter(e-> (e.getaId()==authorId)).
+			List<Transaction> records1 = financialCustomRepository.findBydateBetween(startDate, endDate);
+			
+			List<Transaction> records=	records1.stream().filter(e-> (e.getaId()==authorId)).
 					collect(Collectors.toList());
+			
+			
 			
 			return records;
 		}

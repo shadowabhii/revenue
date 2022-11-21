@@ -13,7 +13,7 @@ public interface IFinancialServices {
 	Double authorRevenue(Integer authorId);
 	//Double authorRevenueBetweenDates(Date endDate,Date startDate,Integer authorId);
 	Double authorRevenueBetweenDates(Date startDate,Date endDate, Integer authorId);
-	List<Transaction> getAuthorHistory(Integer authorId);
+	List<Transaction> getAuthorHistory(Date startDate, Date endDate,Integer authorId);
 	
 	
 }

@@ -77,11 +77,12 @@ public class RevenueController {
 		
 	}
 	
-	@GetMapping("authorHistory/{aId}")
-	public List<Transaction> getAuthorHistory(@PathVariable Integer aId)
+	@GetMapping("/authorHistory/{startDate}/{endDate}/{aId}")
+	public List<Transaction> getAuthorHistory(@PathVariable Date startDate,
+			@PathVariable Date endDate , @PathVariable Integer aId)
 	{
 		
-		List<Transaction> authorHistory = financialServices.getAuthorHistory(aId);
+		List<Transaction> authorHistory = financialServices.getAuthorHistory(startDate, endDate,aId);
 		return authorHistory;
 		
 	}
