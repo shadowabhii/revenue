@@ -24,22 +24,13 @@ public class Transaction {
 	private Integer readerId;
 	private Integer bookId;
 	private Integer aId;
-	
+	private String bookTitle;
 	public Integer gettId() {
 		return tId;
 	}
 	public void settId(Integer tId) {
 		this.tId = tId;
 	}
-	
-	
-	public Integer getaId() {
-		return aId;
-	}
-	public void setaId(Integer aId) {
-		this.aId = aId;
-	}
-	
 	public String getReaderName() {
 		return readerName;
 	}
@@ -82,11 +73,22 @@ public class Transaction {
 	public void setBookId(Integer bookId) {
 		this.bookId = bookId;
 	}
-	public Transaction(Integer tId, Integer aId, String readerName, Double price, Date date, Integer quantity,
-			Boolean authorNotified, Integer readerId, Integer bookId) {
+	public Integer getaId() {
+		return aId;
+	}
+	public void setaId(Integer aId) {
+		this.aId = aId;
+	}
+	public String getBookTitle() {
+		return bookTitle;
+	}
+	public void setBookTitle(String bookTitle) {
+		this.bookTitle = bookTitle;
+	}
+	public Transaction(Integer tId, String readerName, Double price, Date date, Integer quantity,
+			Boolean authorNotified, Integer readerId, Integer bookId, Integer aId, String bookTitle) {
 		super();
 		this.tId = tId;
-		this.aId = aId;
 		this.readerName = readerName;
 		this.price = price;
 		this.date = date;
@@ -94,6 +96,8 @@ public class Transaction {
 		this.authorNotified = authorNotified;
 		this.readerId = readerId;
 		this.bookId = bookId;
+		this.aId = aId;
+		this.bookTitle = bookTitle;
 	}
 	public Transaction() {
 		super();
@@ -103,13 +107,11 @@ public class Transaction {
 	public String toString() {
 		return "Transaction [tId=" + tId + ", readerName=" + readerName + ", price=" + price + ", date=" + date
 				+ ", quantity=" + quantity + ", authorNotified=" + authorNotified + ", readerId=" + readerId
-				+ ", bookId=" + bookId + ", aId=" + aId + "]";
+				+ ", bookId=" + bookId + ", aId=" + aId + ", bookTitle=" + bookTitle + "]";
 	}
-
 	
 	
 	
 	
 	
-
 }

@@ -35,6 +35,8 @@ public class RevenueController {
 	@Autowired
 	private IFinancialsRepository financialsRepository;
 
+	
+	//method to calculate auythor revenue
 	@GetMapping("/revenue/{authorId}")
 	public Double getTotalRevenue(@PathVariable("authorId") Integer authorId) {
 
