@@ -1,0 +1,21 @@
+test case 1.
+Record transaction
+
+test case2:
+get revenue by author id
+a. id as number
+b. id as null
+c. id as double
+4. id is empty
+
+test case 3:
+get revnue by dates
+a.start date is null
+b.end date is null
+c. end date greater than start date
+
+test case 4:
+get order history by dates
+a.start date is null
+b.end date is null
+c. end date greater than start date

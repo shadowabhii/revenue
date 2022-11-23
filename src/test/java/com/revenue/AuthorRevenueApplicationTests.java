@@ -48,14 +48,25 @@ class AuthorRevenueApplicationTests {
 	  }
 	  
 	  
-	  @Test public void testTransaction() { Transaction transaction = new
-	  Transaction(24,"kevin",100.0,null,1,true,3,2,4,"cartoon");
+	  @Test public void testTransaction() { 
+		  Transaction transaction = new	  Transaction(24,"kevin",100.0,null,1,true,3,2,4,"cartoon");
 	  
-	  Transaction response = restTemplate.postForObject(baseUrl+"/transactionss",
-	  transaction, Transaction.class);
+	  Transaction response = restTemplate.postForObject(baseUrl+"/transactionss", transaction, Transaction.class);
 	  
-	  assertEquals("catoon", response.getBookTitle()); assertEquals(1,
-	  testRepo.findAll().size()); }
+	  assertEquals("catoon", response.getBookTitle()); 
+	  assertEquals(1, testRepo.findAll().size()); 
+	  }
+	  
+	  @Test public void testRevenue() { 
+		  Double price=0.0;
+		  
+	 
+	  
+	  Double response = restTemplate.getForObject(baseUrl+"revenue/1", Double.class);
+	  
+	  assertEquals(136, response); 
+	 // assertEquals(1, testRepo.findAll().size()); 
+	  }
 	  
 	  
 	  
